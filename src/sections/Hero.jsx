@@ -3,10 +3,28 @@ import React from 'react'
 import { words } from '../constants'
 import Button from '../components/Button'
 import HeroExperience from '../components/HeroModels.jsx/HeroExperience'
+import gsap from "gsap"
+import { useGSAP } from '@gsap/react'
+import AnimatedCounter from '../components/AnimatedCounter'
 
 const Hero = () => {
+  useGSAP(() => {
+    gsap.fromTo('.hero-text h1', 
+      {
+        y:50,
+        opacity:0,
+      },
+      {
+        y:0,
+        opacity:1,
+        stagger:0.2,
+        duration:1,
+        ease:'power2.inOut'
+      }
+    )
+  })
   return (
-    <section id='hero' className='relative overflow-hidden'>
+    <section id='hero' className='relative min-h-screen pt-32'>
       <div className='absolute top-0 left-0 z-10'>
         <img src='/images/bg.png' alt='background' />
       </div>
@@ -56,8 +74,12 @@ const Hero = () => {
             </div>
           </figure>
         </div>
+       
       </div>
+     
+
     </section>
+  
   )
 }
 
