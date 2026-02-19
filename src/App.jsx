@@ -6,6 +6,8 @@ import Navbar from './components/Navbar'
 import LogoShowcase from './sections/LogoSections'
 import FeatureCards from './sections/FeatureCards'
 import Experience from './sections/Experience'
+import TechStack from './sections/TechStack'
+import Testimonials from './sections/Testimonials'
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
       <LogoShowcase/>
       <FeatureCards/>
       <Experience/>
+      <TechStack/>
+      <Testimonials/>
     </>
   )
 }
