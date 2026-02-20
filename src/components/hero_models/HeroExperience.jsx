@@ -4,7 +4,7 @@ import { useMediaQuery } from "react-responsive";
 
 import { Room } from "./Room";
 import HeroLights from "./HeroLights";
-import Particles from "./Particles";
+// import Particles from "./Particles";
 import { Suspense } from "react";
 
 const HeroExperience = () => {
@@ -12,7 +12,7 @@ const HeroExperience = () => {
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
 
   return (
-    <Canvas camera={{ position: [0, 0, 15], fov: 45 }}>
+    <Canvas camera={{ position: [0, 0, 15], fov: 45 }}  dpr={[1, 1.5]} frameloop="demand" >
       {/* deep blue ambient */}
       <ambientLight intensity={0.2} color="#1a1a40" />
       <directionalLight position={[5,5,5]} intensity={2} />
@@ -24,11 +24,13 @@ const HeroExperience = () => {
         minDistance={5} // Minimum distance for zooming in
         minPolarAngle={Math.PI / 5} // Minimum angle for vertical rotation
         maxPolarAngle={Math.PI / 2} // Maximum angle for vertical rotation
+        enableDamping={false}
+
       />
 
       <Suspense fallback={null}>
         <HeroLights />
-        <Particles count={20} />
+        {/* <Particles count={20} /> */}
         <group
           scale={isMobile ? 0.7 : 1}
           position={[0, -3.5, 0]}

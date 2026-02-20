@@ -2,7 +2,7 @@ import React from 'react'
 
 import { words } from '../constants'
 import Button from '../components/Button'
-import HeroExperience from '../components/HeroModels.jsx/HeroExperience'
+import HeroExperience from '../components/hero_models/HeroExperience'
 import gsap from "gsap"
 import { useGSAP } from '@gsap/react'
 import AnimatedCounter from '../components/AnimatedCounter'
@@ -70,7 +70,7 @@ const Hero = () => {
           {/* Right */}
           <figure>
             <div className='hero-3d-layout'>
-              <HeroExperience/>
+              {/* <HeroExperience/> */}
             </div>
           </figure>
         </div>
