@@ -22,7 +22,7 @@ const Hero = () => {
         ease:'power2.inOut'
       }
     )
-  })
+  } , { scope: '.hero-text' })
   return (
     <section id='hero' className='relative min-h-screen pt-32'>
       <div className='absolute top-0 left-0 z-10'>
@@ -70,7 +70,7 @@ const Hero = () => {
           {/* Right */}
           <figure>
             <div className='hero-3d-layout'>
-              {/* <HeroExperience/> */}
+              <HeroExperience/>
             </div>
           </figure>
         </div>
