@@ -59,18 +59,23 @@ Command: npx gltfjsx@6.5.3 optimized-room.glb
 
 import React, { useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
-import { EffectComposer, SelectiveBloom } from "@react-three/postprocessing";
+// import { EffectComposer, SelectiveBloom } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
 import * as THREE from "three";
+import { useMemo } from "react";
 
 export function Room(props) {
   const { nodes, materials } = useGLTF("/models/optimized-room.glb");
   const screensRef = useRef();
   const matcapTexture = useTexture("/images/textures/mat1.png");
+  const curtainMaterial = useMemo(
+    () => new THREE.MeshPhongMaterial({ color: "#d90429" }),
+    []
+  )
 
-  const curtainMaterial = new THREE.MeshPhongMaterial({
-    color: "#d90429",
-  });
+  // const curtainMaterial = new THREE.MeshPhongMaterial({
+  //   color: "#d90429",
+  // });
 
   const bodyMaterial = new THREE.MeshPhongMaterial({
     map: matcapTexture,
@@ -98,15 +103,16 @@ export function Room(props) {
 
   return (
     <group {...props} dispose={null}>
-      <EffectComposer>
+      {/* <EffectComposer>
         <SelectiveBloom
           selection={screensRef}
-          intensity={1.5} // Strength of the bloom
+          
+          nsity={1.5} // Strength of the bloom
           luminanceThreshold={0.2} // Minimum luminance needed
           luminanceSmoothing={0.9} // Smooth transition
           blendFunction={BlendFunction.ADD} // How it blends
         />
-      </EffectComposer>
+      </EffectComposer> */}
       <mesh
         geometry={nodes._________6_blinn1_0.geometry}
         material={curtainMaterial}

@@ -10,12 +10,14 @@ import TechStack from './sections/TechStack'
 import Testimonials from './sections/Testimonials'
 import Contact from './sections/Contact'
 import Footer from './sections/Footer'
+import HeroExperience from './components/hero_models/HeroExperience'
 
 const App = () => {
   return (
     <>
       <Navbar/>
       <Hero/>
+      {/* <HeroExperience/> */}
       <AnimatedCounter/>
       <ShowcaseSection/>
       <LogoShowcase/>
